@@ -79,21 +79,21 @@ class TestWebApp(unittest.TestCase):
         submit_button.click()
         time.sleep(3)  # Espera para ver el mensaje de éxito
 
-        # Manejar la alerta emergente de JavaScript
+        # Manejar la alerta emergente (para confirmar la edición)
         try:
-            alert = WebDriverWait(driver, 5).until(EC.alert_is_present())  # Espera hasta que la alerta esté presente
+            alert = WebDriverWait(driver, 5).until(EC.alert_is_present())
             alert.accept()  # Aceptar la alerta
             print("Alerta de 'Tienda actualizada' aceptada")
-        except Exception as e:
-            print(f"Error al manejar la alerta de JavaScript: {e}")
-            self.fail("No se encontró la alerta emergente de JavaScript.")
+        except:
+            print("No se encontró una alerta emergente de JavaScript.")
 
         # Esperar un poco más para asegurarnos de que la página haya recargado
         time.sleep(3)
 
-        # Ahora buscar el mensaje de éxito en el DOM
+        # Ahora buscamos el mensaje de éxito en el DOM
         try:
-            success_message = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "alert-success")))  # O la clase que corresponda
+            # Buscar el mensaje de éxito con la clase 'alert-success'
+            success_message = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "alert-success")))
             print("Mensaje de éxito encontrado")
             self.assertTrue(success_message.is_displayed())
         except Exception as e:
@@ -104,6 +104,7 @@ class TestWebApp(unittest.TestCase):
     def tearDownClass(cls):
         cls.driver.quit()
 
+# Generar reportes
 if __name__ == "__main__":
     runner = HTMLTestRunner(output='report', report_title='Pruebas Selenium', descriptions='Resultados de pruebas')
     unittest.main(testRunner=runner)

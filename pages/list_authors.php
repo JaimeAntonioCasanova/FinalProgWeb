@@ -6,56 +6,63 @@
     <title>Listado de Autores</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Estilos personalizados -->
+    <!-- Estilos específicos para list_authors -->
     <link href="../css/list_authors.css" rel="stylesheet">
 </head>
 <body>
     <div class="container my-5">
-        <h1 class="text-center">Listado de Autores</h1>
+        <!-- Botón para abrir el formulario de edición -->
+        <div class="d-flex justify-content-between">
+            <h1 class="text-center">Listado de Autores</h1>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editAuthorModal">Editar Autor</button>
+        </div>
+
         <div id="author-list" class="row">
             <!-- Aquí se insertarán los autores dinámicamente -->
         </div>
     </div>
+
+    <!-- Modal para editar autor -->
+    <div class="modal fade" id="editAuthorModal" tabindex="-1" aria-labelledby="editAuthorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editAuthorModalLabel">Editar Autor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="edit-author-form">
+                        <div class="mb-3">
+                            <label for="edit-name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="edit-name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-lastname" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="edit-lastname" name="lastname" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-city" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="edit-city" name="city" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-state" class="form-label">Estado</label>
+                            <input type="text" class="form-control" id="edit-state" name="state" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-country" class="form-label">País</label>
+                            <input type="text" class="form-control" id="edit-country" name="country" required>
+                        </div>
+                        <input type="hidden" id="edit-author-id" name="author_id">
+                        <button type="submit" class="btn btn-primary">Actualizar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script personalizado -->
-    <script src="../js/scripts.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const authorList = document.getElementById("author-list");
-
-            fetch('../php/fetch_authors.php')
-                .then(response => response.json())
-                .then(data => {
-                    if (data.error) {
-                        authorList.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
-                        return;
-                    }
-
-                    data.forEach(author => {
-                        const col = document.createElement("div");
-                        col.classList.add("col-md-4", "mb-4");
-
-                        col.innerHTML = `
-                            <div class="card shadow-sm h-100">
-                                <div class="card-body">
-                                    <h5 class="card-title">${author.nombre} ${author.apellido}</h5>
-                                    <p class="card-text">
-                                        <strong>Ciudad:</strong> ${author.ciudad} <br>
-                                        <strong>Estado:</strong> ${author.estado} <br>
-                                        <strong>País:</strong> ${author.pais}
-                                    </p>
-                                </div>
-                            </div>
-                        `;
-                        authorList.appendChild(col);
-                    });
-                })
-                .catch(err => {
-                    authorList.innerHTML = `<div class="alert alert-danger">Error al cargar los datos.</div>`;
-                    console.error(err);
-                });
-        });
-    </script>
+    <!-- Script específico para list_authors -->
+    <script src="../js/list_authors.js"></script>
 </body>
 </html>

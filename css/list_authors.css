@@ -1,0 +1,26 @@
+/* Estilos específicos para la página list_authors */
+
+/* Color de fondo bisque */
+body {
+    background-color: bisque;
+}
+
+/* Estilo para las tarjetas */
+.card {
+    background-color: beige; /* Color de fondo de las tarjetas */
+}
+
+/* Personalización de las tarjetas */
+.card-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.card-text {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.card-text strong {
+    color: #007bff;
+}

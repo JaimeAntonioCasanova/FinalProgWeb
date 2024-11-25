@@ -1,0 +1,44 @@
+/* Estilos específicos para la página list_books */
+
+/* Color de fondo bisque */
+body {
+    background-color: bisque;
+}
+
+/* Estilo para las tarjetas */
+.card {
+    background-color: beige; /* Color de fondo de las tarjetas */
+}
+
+/* Personalización de las tarjetas */
+.card-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.card-text {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.card-text strong {
+    color: #007bff;
+}
+
+/* Estilos para el botón de editar */
+.btn-warning {
+    margin-top: 10px;
+}
+
+/* Estilo del modal */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+}
+
+.modal-body {
+    padding: 20px;
+}

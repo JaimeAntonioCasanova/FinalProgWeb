@@ -6,17 +6,12 @@
     <title>Listado de Tiendas</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Estilos específicos para list_stores -->
+    <!-- Estilos específicos -->
     <link href="../css/list_stores.css" rel="stylesheet">
 </head>
 <body>
     <div class="container my-5">
-        <!-- Botón para abrir el formulario de edición -->
-        <div class="d-flex justify-content-between">
-            <h1 class="text-center">Listado de Tiendas</h1>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editStoreModal">Editar Tienda</button>
-        </div>
-
+        <h1 class="text-center">Listado de Tiendas</h1>
         <div id="store-list" class="row">
             <!-- Aquí se insertarán las tiendas dinámicamente -->
         </div>
@@ -33,18 +28,37 @@
                 <div class="modal-body">
                     <form id="edit-store-form">
                         <div class="mb-3">
+                            <label for="edit-store-id" class="form-label">ID Tienda</label>
+                            <input type="text" class="form-control" id="edit-store-id" name="id_tienda" readonly>
+                        </div>
+                        <div class="mb-3">
                             <label for="edit-store-name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="edit-store-name" name="store_name" required>
+                            <input type="text" class="form-control" id="edit-store-name" name="nombre_tienda" required>
                         </div>
                         <div class="mb-3">
-                            <label for="edit-store-location" class="form-label">Ubicación</label>
-                            <input type="text" class="form-control" id="edit-store-location" name="store_location" required>
+                            <label for="edit-store-address" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="edit-store-address" name="direcc_tienda" required>
                         </div>
                         <div class="mb-3">
-                            <label for="edit-store-manager" class="form-label">Gerente</label>
-                            <input type="text" class="form-control" id="edit-store-manager" name="store_manager" required>
+                            <label for="edit-store-city" class="form-label">Ciudad</label>
+                            <input type="text" class="form-control" id="edit-store-city" name="ciudad" required>
                         </div>
-                        <input type="hidden" id="edit-store-id" name="store_id">
+                        <div class="mb-3">
+                            <label for="edit-store-state" class="form-label">Estado</label>
+                            <input type="text" class="form-control" id="edit-store-state" name="estado" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-store-country" class="form-label">País</label>
+                            <input type="text" class="form-control" id="edit-store-country" name="pais" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-store-zip" class="form-label">Código Postal</label>
+                            <input type="text" class="form-control" id="edit-store-zip" name="cod_postal" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-store-terms" class="form-label">Términos</label>
+                            <input type="text" class="form-control" id="edit-store-terms" name="terminos" required>
+                        </div>
                         <button type="submit" class="btn btn-primary">Actualizar</button>
                     </form>
                 </div>
@@ -54,7 +68,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script específico para list_stores -->
+    <!-- Script específico -->
     <script src="../js/list_stores.js"></script>
 </body>
 </html>

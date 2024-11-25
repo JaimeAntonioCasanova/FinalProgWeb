@@ -1,5 +1,15 @@
 /* Estilos específicos para la página list_books */
 
+/* Color de fondo bisque */
+body {
+    background-color: bisque;
+}
+
+/* Estilo para las tarjetas */
+.card {
+    background-color: beige; /* Color de fondo de las tarjetas */
+}
+
 /* Personalización de las tarjetas */
 .card-title {
     font-weight: bold;

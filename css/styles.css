@@ -112,3 +112,18 @@ form {
     text-align: center;
     margin-top: 20px;
 }
+
+/* Estilos adicionales para los contactos */
+.card-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.card-text {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.card-text strong {
+    color: #007bff;
+}

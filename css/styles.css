@@ -101,3 +101,29 @@ body {
     font-size: 0.9em;
     color: #555;
 }
+
+/* Estilos para el formulario de contacto */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#response-message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilos adicionales para los contactos */
+.card-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.card-text {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.card-text strong {
+    color: #007bff;
+}

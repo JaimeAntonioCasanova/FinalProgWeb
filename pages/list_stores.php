@@ -12,6 +12,10 @@
 <body>
     <div class="container my-5">
         <h1 class="text-center">Listado de Tiendas</h1>
+
+        <!-- Contenedor para mostrar el mensaje de éxito o error -->
+        <div id="success-message"></div>
+
         <div id="store-list" class="row">
             <!-- Aquí se insertarán las tiendas dinámicamente -->
         </div>
@@ -27,6 +31,7 @@
                 </div>
                 <div class="modal-body">
                     <form id="edit-store-form">
+                        <!-- Formulario para editar tienda -->
                         <div class="mb-3">
                             <label for="edit-store-id" class="form-label">ID Tienda</label>
                             <input type="text" class="form-control" id="edit-store-id" name="id_tienda" readonly>

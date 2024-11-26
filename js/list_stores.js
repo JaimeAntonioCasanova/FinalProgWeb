@@ -75,16 +75,19 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => response.json())
         .then(data => {
+            const messageDiv = document.getElementById('success-message');
             if (data.success) {
-                alert('Tienda actualizada correctamente');
-                window.location.reload(); // Recargar la página para mostrar los cambios
+                // Mostrar el mensaje de éxito
+                messageDiv.innerHTML = `<div class="alert alert-success" role="alert">Tienda actualizada correctamente</div>`;
             } else {
-                alert('Error al actualizar la tienda');
+                // Mostrar mensaje de error
+                messageDiv.innerHTML = `<div class="alert alert-danger" role="alert">Error al actualizar la tienda</div>`;
             }
         })
         .catch(err => {
             console.error(err);
-            alert('Error al enviar la solicitud');
+            const messageDiv = document.getElementById('success-message');
+            messageDiv.innerHTML = `<div class="alert alert-danger" role="alert">Error al enviar la solicitud</div>`;
         });
     });
 });
